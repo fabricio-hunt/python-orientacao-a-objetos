@@ -1,6 +1,7 @@
 import os
 
-restaurantes = ['Pizza','Sushi']
+restaurantes = ['Pizza Dont','Sushi Jalin','Sabor da Mesa', 'Delicia Restaurante']
+print('')
 
 def exibir_nome_do_programa():
 
@@ -28,6 +29,20 @@ def opcao_invalida():
      print('Opção Inválida\n')
      input('\nDigite qualquer tecla para voltar ao Menu principal!')
      main()
+
+def listar_restaurantes():
+     os.system('cls')
+     print('\nLISTA DE RESTAURANTES\n')
+     print('-------------------------------')
+
+     for restaurante in restaurantes:
+          print(f'. {restaurante}')
+     print('-------------------------------')
+     input('\nDigite qualquer tecla para voltar ao Menu Principal\n')
+     print('')
+
+     main()
+
 
 def cadastrar_novo_restaurante():
      os.system('cls')
@@ -61,15 +76,6 @@ def main():
     exibir_nome_do_programa()
     exibir_opcoes()
     escolher_opcoes()
-
-
-
-def listar_restaurantes():
-     os.system('cls')
-     print('\nListando os restaurantes\n')
-
-     for restaurante in restaurantes:
-          print(f'.{restaurante}')
     
 if __name__ == "__main__":
     main()
