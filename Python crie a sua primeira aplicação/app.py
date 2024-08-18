@@ -25,10 +25,13 @@ def finalizar__app():
      os.system('cls')
      print('Sistema Encerrado!!!\n')
 
+def voltar_ao_menu_principal():
+      input('Digite qualquer tecla para voltar ao Menu Principal: \n')
+      main()
+
 def opcao_invalida():
      print('Opção Inválida\n')
-     input('\nDigite qualquer tecla para voltar ao Menu principal!')
-     main()
+     voltar_ao_menu_principal()
 
 def listar_restaurantes():
      os.system('cls')
@@ -38,11 +41,9 @@ def listar_restaurantes():
      for restaurante in restaurantes:
           print(f'. {restaurante}')
      print('-------------------------------')
-     input('\nDigite qualquer tecla para voltar ao Menu Principal\n')
+     voltar_ao_menu_principal()
      print('')
-
      main()
-
 
 def cadastrar_novo_restaurante():
      os.system('cls')
@@ -50,9 +51,7 @@ def cadastrar_novo_restaurante():
      nome_do_restaurante =  input('Digite o nome do restaurante: ')
      restaurantes.append(nome_do_restaurante)
      print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
-     input('Digite qualquer tecla para voltar ao Menu Principal\2')
-     main()
-
+    
 def escolher_opcoes():
      try:
           opcao_escolhida = int(input('Escolha uma opção: ')) 
