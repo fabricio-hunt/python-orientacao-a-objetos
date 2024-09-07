@@ -1,6 +1,5 @@
 import os
 
-restaurantes = ['Pizza', 'Sushi']
 
 def exibir_nome_do_programa():
     print("""
@@ -11,6 +10,13 @@ def exibir_nome_do_programa():
 ██████╔╝██║░░██║██████╦╝╚█████╔╝██║░░██║  ███████╗██╔╝╚██╗██║░░░░░██║░░██║███████╗██████╔╝██████╔╝
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░  
 """)
+    
+restaurantes = [ {'nome': 'Peixe Frito', 'categoria': 'Regional', 'ativo':False},
+                 {'nome':'Sabor de Queimado', 'categoria':'Churrascaria','ativo': True},
+                 {'nome':'Sabor na Brasa', 'categoria':'Churrascaria','ativo': True},
+                 {'nome':'Cantina', 'categoria':'Italiano','ativo': False}
+]
+
 
 def exibir_opcoes():
     print('1. Cadastrar restaurante')
@@ -46,7 +52,10 @@ def listar_restaurantes():
     exibir_subtitulo('Listando restaurantes')
 
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_do_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f'- {nome_do_restaurante} | {categoria} | {ativo}')
 
     voltar_ao_menu_principal()
 
@@ -76,3 +85,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
