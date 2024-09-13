@@ -10,6 +10,9 @@ class Restaurante:
         self.categoria  = ''
         self.situacao = False
 
+    def __str__(self):
+        return f'{self.nome} | {self.categoria}'
+    
 
 restaurante_sabor_de_queimado = Restaurante('Sabor de Queimado', 'Churrascaria')
 restaurante_sabor_de_queimado.nome = 'Sabor de Queimado'
@@ -23,4 +26,4 @@ churras_rest.categoria = 'Churrascaria'
 
 restaurantes = [restaurante_sabor_de_queimado, churras_rest]
 
-print(vars(restaurante_sabor_de_queimado))
+print(restaurante_sabor_de_queimado)
