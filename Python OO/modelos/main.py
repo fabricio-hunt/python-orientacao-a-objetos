@@ -10,7 +10,7 @@ class Restaurante:
     def __init__(self, nome, categoria):
         self.nome = ''
         self.categoria  = ''
-        self.situacao = False
+        self._situacao = False
         Restaurante.restaurantes.append(self)
 
     def __str__(self):
@@ -19,7 +19,11 @@ class Restaurante:
     def listar_restaurantes():
         for restaurante in Restaurante.restaurantes:
             print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.situacao}')
-    
+
+    @property
+    def situacao (self):
+        return 'Ativo✅' if self._situacao else 'Inativo❎'
+
 
 restaurante_sabor_de_queimado = Restaurante('Sabor de Queimado', 'Churrascaria')
 restaurante_sabor_de_queimado.nome = 'Sabor de Queimado'
