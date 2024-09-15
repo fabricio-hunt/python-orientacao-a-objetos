@@ -17,8 +17,9 @@ class Restaurante:
         return f'{self.nome} | {self.categoria}'
     
     def listar_restaurantes():
+        print(f'{'Nome do Restaurante.'.ljust(25)} | {'Categotia'.ljust(25)} | {'Status'}')
         for restaurante in Restaurante.restaurantes:
-            print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.situacao}')
+            print(f'{restaurante.nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.situacao}')
 
     @property
     def situacao (self):
